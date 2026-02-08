@@ -3,6 +3,7 @@ import 'package:ai_video_genarator/core/common/black_button.dart';
 import 'package:ai_video_genarator/core/constant/app_images.dart';
 import 'package:ai_video_genarator/core/theme/app_pallete.dart';
 import 'package:ai_video_genarator/core/utils/screen_size.dart';
+import 'package:ai_video_genarator/features/auth/presentation/pages/enter_otp_page.dart';
 import 'package:ai_video_genarator/features/auth/presentation/widgets/auth_field.dart';
 import 'package:flutter/material.dart';
 
@@ -59,7 +60,16 @@ class ForgotPasswordPage extends StatelessWidget {
 
                   // Send Otp Button
                   Spacer(),
-                  BlackButton(text: "Send Otp ", onTap: () {}),
+                  BlackButton(
+                    text: "Send Otp ",
+                    onTap: () {
+                      //route to enter OTP page
+                      Navigator.push(
+                        context,
+                        EnterOtpPage.route(email: emailController.text),
+                      );
+                    },
+                  ),
                   SizedBox(height: context.heightPercentage(5)),
                 ],
               ),
