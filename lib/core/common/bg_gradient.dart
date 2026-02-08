@@ -7,17 +7,15 @@ class BgGradient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [AppPallete.blackGradient1, AppPallete.blackGradient2],
-          ),
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [AppPallete.blackGradient1, AppPallete.blackGradient2],
         ),
-        child: child,
       ),
+      child: child,
     );
   }
 }

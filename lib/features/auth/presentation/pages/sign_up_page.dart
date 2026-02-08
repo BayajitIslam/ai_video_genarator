@@ -21,9 +21,9 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       //Logo Here
       appBar: AppBar(
-        forceMaterialTransparency: true,
         title: SizedBox(
           height: 128,
           width: 128,
@@ -34,142 +34,144 @@ class SignUpPage extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: EdgeInsets.all(context.spacing16),
-            child: Column(
-              children: [
-                //Sign Up Text
-                Align(
-                  alignment: AlignmentGeometry.centerLeft,
-                  child: Text(
-                    'Sign Up',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                      color: AppPallete.whiteColor,
+            child: SafeArea(
+              child: Column(
+                children: [
+                  //Sign Up Text
+                  Align(
+                    alignment: AlignmentGeometry.centerLeft,
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                        color: AppPallete.whiteColor,
+                      ),
                     ),
                   ),
-                ),
 
-                //Username Textfield
-                SizedBox(height: context.spacing32),
-                AuthField(
-                  controller: usernameController,
-                  hintText: 'Username',
-                  isPassword: false,
-                  prefixIcon: Icons.person,
-                ),
-
-                //Email TextField
-                SizedBox(height: context.spacing16),
-                AuthField(
-                  controller: emailController,
-                  hintText: 'Email Address',
-                  isPassword: false,
-                  prefixIcon: Icons.email,
-                ),
-
-                //Password TextField
-                SizedBox(height: context.spacing16),
-                AuthField(
-                  controller: passwordController,
-                  hintText: 'Password',
-                  isPassword: true,
-                  isObscure: true,
-                  prefixIcon: Icons.lock,
-                ),
-
-                //Re type your password textfield
-                SizedBox(height: context.spacing16),
-                AuthField(
-                  controller: retypePasswordController,
-                  hintText: 'Re-type Password',
-                  isPassword: true,
-                  isObscure: true,
-                  prefixIcon: Icons.lock,
-                ),
-
-                //Privacy Policy Message
-                SizedBox(height: context.heightPercentage(9.90)),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: context.widthPercentage(10),
+                  //Username Textfield
+                  SizedBox(height: context.spacing32),
+                  AuthField(
+                    controller: usernameController,
+                    hintText: 'Username',
+                    isPassword: false,
+                    prefixIcon: Icons.person,
                   ),
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      text:
-                          "By clicking the “sign up” button, you accept the terms of the ",
-                      style: Theme.of(context).textTheme.bodySmall,
-                      children: [
-                        TextSpan(
-                          text: "Privacy Policy.",
-                          style: Theme.of(context).textTheme.bodySmall
-                              ?.copyWith(color: AppPallete.whiteColor),
-                        ),
-                      ],
+
+                  //Email TextField
+                  SizedBox(height: context.spacing16),
+                  AuthField(
+                    controller: emailController,
+                    hintText: 'Email Address',
+                    isPassword: false,
+                    prefixIcon: Icons.email,
+                  ),
+
+                  //Password TextField
+                  SizedBox(height: context.spacing16),
+                  AuthField(
+                    controller: passwordController,
+                    hintText: 'Password',
+                    isPassword: true,
+                    isObscure: true,
+                    prefixIcon: Icons.lock,
+                  ),
+
+                  //Re type your password textfield
+                  SizedBox(height: context.spacing16),
+                  AuthField(
+                    controller: retypePasswordController,
+                    hintText: 'Re-type Password',
+                    isPassword: true,
+                    isObscure: true,
+                    prefixIcon: Icons.lock,
+                  ),
+
+                  //Privacy Policy Message
+                  SizedBox(height: context.heightPercentage(9.90)),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.widthPercentage(10),
+                    ),
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        text:
+                            "By clicking the “sign up” button, you accept the terms of the ",
+                        style: Theme.of(context).textTheme.bodySmall,
+                        children: [
+                          TextSpan(
+                            text: "Privacy Policy.",
+                            style: Theme.of(context).textTheme.bodySmall
+                                ?.copyWith(color: AppPallete.whiteColor),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
 
-                //Sign Up Button
-                SizedBox(height: context.spacing24),
-                BlackButton(text: "Sign Up", onTap: () {}),
+                  //Sign Up Button
+                  SizedBox(height: context.spacing24),
+                  BlackButton(text: "Sign Up", onTap: () {}),
 
-                //----- or -----
-                SizedBox(height: context.spacing16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    //line
-                    Container(
-                      height: 1,
-                      width: context.widthPercentage(40),
-                      color: AppPallete.whiteColor,
-                    ),
-                    //or
-                    Text("or", style: Theme.of(context).textTheme.bodyMedium),
-                    //line
-                    Container(
-                      height: 1,
-                      width: context.widthPercentage(40),
-                      color: AppPallete.whiteColor,
-                    ),
-                  ],
-                ),
-
-                //Social Login Button - Google & Apple
-                SizedBox(height: context.spacing24),
-                Row(
-                  children: [
-                    //google
-                    AuthSocialButton(iconPath: AppIcons.google),
-                    //apple
-                    SizedBox(width: context.spacing16),
-                    AuthSocialButton(iconPath: AppIcons.apple),
-                  ],
-                ),
-
-                //Allready Have an account? Sign in
-                SizedBox(height: context.heightPercentage(4.0)),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: context.widthPercentage(10),
+                  //----- or -----
+                  SizedBox(height: context.spacing16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      //line
+                      Container(
+                        height: 1,
+                        width: context.widthPercentage(40),
+                        color: AppPallete.whiteColor,
+                      ),
+                      //or
+                      Text("or", style: Theme.of(context).textTheme.bodyMedium),
+                      //line
+                      Container(
+                        height: 1,
+                        width: context.widthPercentage(40),
+                        color: AppPallete.whiteColor,
+                      ),
+                    ],
                   ),
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      text: "Already have an account? ",
-                      style: Theme.of(context).textTheme.bodyMedium,
-                      children: [
-                        TextSpan(
-                          text: "Sign In",
-                          style: Theme.of(context).textTheme.bodyMedium
-                              ?.copyWith(color: AppPallete.whiteColor),
-                        ),
-                      ],
+
+                  //Social Login Button - Google & Apple
+                  SizedBox(height: context.spacing24),
+                  Row(
+                    children: [
+                      //google
+                      AuthSocialButton(iconPath: AppIcons.google),
+                      //apple
+                      SizedBox(width: context.spacing16),
+                      AuthSocialButton(iconPath: AppIcons.apple),
+                    ],
+                  ),
+
+                  //Allready Have an account? Sign in
+                  SizedBox(height: context.heightPercentage(4.0)),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: context.widthPercentage(10),
+                    ),
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        text: "Already have an account? ",
+                        style: Theme.of(context).textTheme.bodyMedium,
+                        children: [
+                          TextSpan(
+                            text: "Sign In",
+                            style: Theme.of(context).textTheme.bodyMedium
+                                ?.copyWith(color: AppPallete.whiteColor),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
