@@ -4,6 +4,7 @@ import 'package:ai_video_genarator/core/constant/app_icons.dart';
 import 'package:ai_video_genarator/core/constant/app_images.dart';
 import 'package:ai_video_genarator/core/theme/app_pallete.dart';
 import 'package:ai_video_genarator/core/utils/screen_size.dart';
+import 'package:ai_video_genarator/features/auth/presentation/pages/forgot_password_page.dart';
 import 'package:ai_video_genarator/features/auth/presentation/pages/sign_up_page.dart';
 import 'package:ai_video_genarator/features/auth/presentation/widgets/auth_field.dart';
 import 'package:ai_video_genarator/features/auth/presentation/widgets/auth_social_button.dart';
@@ -73,10 +74,16 @@ class SignInPage extends StatelessWidget {
 
                   //Forgot Password
                   SizedBox(height: context.spacing24),
-                  Text(
-                    'Forgot password?',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: AppPallete.greyColor,
+                  GestureDetector(
+                    onTap: () {
+                      //route to forgot password
+                      Navigator.push(context, ForgotPasswordPage.route());
+                    },
+                    child: Text(
+                      'Forgot password?',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppPallete.greyColor,
+                      ),
                     ),
                   ),
 
