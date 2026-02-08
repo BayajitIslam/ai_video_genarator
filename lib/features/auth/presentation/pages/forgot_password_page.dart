@@ -35,11 +35,11 @@ class ForgotPasswordPage extends StatelessWidget {
             child: SafeArea(
               child: Column(
                 children: [
-                  //Enter OTP Text
+                  //Forgot Password Text
                   Align(
                     alignment: AlignmentGeometry.centerLeft,
                     child: Text(
-                      'Enter OTP',
+                      'Forgot Password ',
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w600,
