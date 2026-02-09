@@ -42,6 +42,11 @@ class AppTheme {
         fontSize: 18,
         fontWeight: FontWeight.w400,
       ),
+      titleMedium: GoogleFonts.roboto(
+        color: AppPallete.whiteColor,
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+      ),
     ),
   );
 }

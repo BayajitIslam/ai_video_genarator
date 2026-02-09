@@ -3,13 +3,18 @@ import 'package:ai_video_genarator/core/common/black_button.dart';
 import 'package:ai_video_genarator/core/constant/app_images.dart';
 import 'package:ai_video_genarator/core/theme/app_pallete.dart';
 import 'package:ai_video_genarator/core/utils/screen_size.dart';
+import 'package:ai_video_genarator/features/auth/presentation/pages/sign_In_page.dart';
 import 'package:ai_video_genarator/features/auth/presentation/widgets/auth_field.dart';
 import 'package:flutter/material.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   //route
-  static MaterialPageRoute<dynamic> route({required String email, required String otp}) =>
-      MaterialPageRoute(builder: (context) => ResetPasswordPage(email: email, otp: otp));
+  static MaterialPageRoute<dynamic> route({
+    required String email,
+    required String otp,
+  }) => MaterialPageRoute(
+    builder: (context) => ResetPasswordPage(email: email, otp: otp),
+  );
 
   //
   final String email;
@@ -76,10 +81,7 @@ class ResetPasswordPage extends StatelessWidget {
                     text: "Confirm",
                     onTap: () {
                       //route to enter OTP page
-                      // Navigator.push(
-                      //   context,
-                      //   EnterOtpPage.route(email: emailController.text),
-                      // );
+                      Navigator.push(context, SignInPage.route());
                     },
                   ),
                   SizedBox(height: context.heightPercentage(5)),

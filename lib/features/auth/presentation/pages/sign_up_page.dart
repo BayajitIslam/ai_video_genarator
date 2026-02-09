@@ -7,13 +7,14 @@ import 'package:ai_video_genarator/core/utils/screen_size.dart';
 import 'package:ai_video_genarator/features/auth/presentation/pages/sign_In_page.dart';
 import 'package:ai_video_genarator/features/auth/presentation/widgets/auth_field.dart';
 import 'package:ai_video_genarator/features/auth/presentation/widgets/auth_social_button.dart';
+import 'package:ai_video_genarator/features/home/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
   //route
   static MaterialPageRoute<dynamic> route() =>
       MaterialPageRoute(builder: (context) => SignUpPage());
-      
+
   SignUpPage({super.key});
 
   //Controller
@@ -118,7 +119,17 @@ class SignUpPage extends StatelessWidget {
 
                   //Sign Up Button
                   SizedBox(height: context.spacing24),
-                  BlackButton(text: "Sign Up", onTap: () {}),
+                  BlackButton(
+                    text: "Sign Up",
+                    onTap: () {
+                      //route to home page
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        HomePage.route(),
+                        (route) => false,
+                      );
+                    },
+                  ),
 
                   //----- or -----
                   SizedBox(height: context.spacing16),
