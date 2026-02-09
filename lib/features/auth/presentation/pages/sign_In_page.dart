@@ -8,7 +8,7 @@ import 'package:ai_video_genarator/features/auth/presentation/pages/forgot_passw
 import 'package:ai_video_genarator/features/auth/presentation/pages/sign_up_page.dart';
 import 'package:ai_video_genarator/features/auth/presentation/widgets/auth_field.dart';
 import 'package:ai_video_genarator/features/auth/presentation/widgets/auth_social_button.dart';
-import 'package:ai_video_genarator/features/home/presentation/pages/home_page.dart';
+import 'package:ai_video_genarator/features/home/presentation/pages/home_main_page.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatelessWidget {
@@ -90,9 +90,12 @@ class SignInPage extends StatelessWidget {
 
                   //Sign In Button
                   SizedBox(height: context.heightPercentage(20)),
-                  BlackButton(text: "Sign In ", onTap: () {
-                    Navigator.push(context, HomePage.route());
-                  }),
+                  BlackButton(
+                    text: "Sign In ",
+                    onTap: () {
+                      Navigator.push(context, HomeMainPage.route());
+                    },
+                  ),
 
                   //----- or -----
                   SizedBox(height: context.spacing16),
